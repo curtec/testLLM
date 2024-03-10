@@ -3,7 +3,8 @@ from transformers import pipeline
 import torch
 
 
-pipe = pipeline(task="summarization", model="Falconsai/text_summarization")
+pipe = pipeline(task="summarization", model="Falconsai/text_summarization",
+                      torch_dtype=torch.bfloat16)
 
 st.header("Summerise your text")
 text = st.text_area("Paste your text here")
